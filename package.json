@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "new app testv on cursor",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadowNino237/cursor-new-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShadowNino237/cursor-new-app/issues"
+  },
+  "homepage": "https://github.com/ShadowNino237/cursor-new-app#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2"
+  }
+}
