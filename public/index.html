@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File Uploader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h1>File Uploader</h1>
+        <p class="subtitle">Upload, list, download, and delete your files</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="uploader-card">
+        <div id="drop-zone" class="drop-zone" tabindex="0" aria-label="Drop files here or use the Browse button">
+          <div class="drop-zone-content">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 16.5a4.5 4.5 0 01-4.5 4.5h-7A4.5 4.5 0 014 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <strong>Drag & drop</strong> files here or
+              <label class="browse">
+                <input id="file-input" type="file" multiple hidden />
+                <span class="button">Browse</span>
+              </label>
+            </div>
+            <div class="hint">Up to 50 files, max 100 MB each</div>
+          </div>
+        </div>
+
+        <div id="selected-list" class="selected-list" aria-live="polite"></div>
+        <div class="actions">
+          <button id="upload-button" class="button primary" disabled>Upload</button>
+          <button id="clear-button" class="button" disabled>Clear</button>
+        </div>
+      </section>
+
+      <section class="files-card">
+        <h2>Your Files</h2>
+        <div id="files-list" class="files-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container small">Running locally on <a href="/">http://localhost:3000</a></div>
+    </footer>
+
+    <script src="/app.js" defer></script>
+  </body>
+  </html>
+
