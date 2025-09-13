@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-upload-alt"></i> File Upload App</h1>
+            <p>Upload and manage your files with ease</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drop files here or click to browse</h3>
+                        <p>Supports all file types • Max size: 10MB per file</p>
+                        <button class="upload-btn" id="uploadBtn">
+                            <i class="fas fa-plus"></i> Choose Files
+                        </button>
+                    </div>
+                    <input type="file" id="fileInput" multiple accept="*/*" style="display: none;">
+                </div>
+                
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+            </section>
+
+            <!-- Files List Section -->
+            <section class="files-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-folder-open"></i> Your Files</h2>
+                    <div class="file-actions">
+                        <button class="action-btn" id="refreshBtn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="action-btn" id="clearAllBtn" title="Clear All">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="files-grid" id="filesGrid">
+                    <div class="no-files" id="noFiles">
+                        <i class="fas fa-folder-open"></i>
+                        <p>No files uploaded yet</p>
+                        <p>Upload your first file to get started!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 File Upload App. Built with ❤️ for easy file management.</p>
+        </footer>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">File Preview</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Preview content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="btn btn-danger" id="deleteBtn">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-server.js"></script>
+</body>
+</html>
