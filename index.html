@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-upload-alt"></i> File Upload App</h1>
+            <p>Upload, store, and manage your files with ease</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="fileInput" multiple accept="*/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-plus"></i> Choose Files
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+            </section>
+
+            <!-- File List Section -->
+            <section class="files-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-folder-open"></i> Uploaded Files</h2>
+                    <div class="file-actions">
+                        <button class="action-btn" id="clearAllBtn" title="Clear All">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="action-btn" id="refreshBtn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="files-grid" id="filesGrid">
+                    <div class="no-files" id="noFiles">
+                        <i class="fas fa-folder-open"></i>
+                        <p>No files uploaded yet</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- File Info Modal -->
+        <div class="modal" id="fileModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">File Information</h3>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- File details will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
